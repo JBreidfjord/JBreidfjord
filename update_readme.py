@@ -1,9 +1,9 @@
 import json
 
-base_pin = '<a href="https://github.com/{username}/{repo}"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo}&theme={theme}" /></a>'
-base_stats = "![GitHub stats](https://github-readme-stats.vercel.app/api?username={username}&theme={theme}&include_all_commits=1&count_private=1)"
-base_lang_stats = "![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={username}&langs_count={count}&theme={theme}&layout=compact)"
-base_wakatime = "[![Wakatime Stats](https://github-readme-stats.vercel.app/api/wakatime?username={username}&theme={theme}&langs_count={count}&layout=compact)](https://wakatime.com/@{username})"
+base_pin = '<a href="https://github.com/{username}/{repo}"><img align="center" width="400" height="140" src="https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo}&theme={theme}" /></a>'
+base_stats = "<img align='center' width='495' height='195' src='https://github-readme-stats.vercel.app/api?username={username}&theme={theme}&include_all_commits=1&count_private=1' />"
+base_lang_stats = "<img align='center' width='350' height='165' src='https://github-readme-stats.vercel.app/api/top-langs/?username={username}&langs_count={count}&theme={theme}&layout=compact' />"
+base_wakatime = "<a href='https://wakatime.com/@{username}'><img align='center' width='495' height='165' src='https://github-readme-stats.vercel.app/api/wakatime?username={username}&theme={theme}&langs_count={count}&layout=compact' /></a>"
 
 
 def replace_chunk(readme: str, content: str, marker: str) -> str:
@@ -12,14 +12,6 @@ def replace_chunk(readme: str, content: str, marker: str) -> str:
     start = readme.find(marker) + len(marker)
     end = readme.find(marker, start)
     return readme[:start] + "\n" + content + "\n" + readme[end:]
-
-
-def format_pins(pins: list, theme: str) -> str:
-    """Format the pinned repositories"""
-    return "".join(
-        base_pin.format(username=pin["username"], repo=pin["repo"], theme=theme)
-        for pin in pins
-    )
 
 
 if __name__ == "__main__":
@@ -33,7 +25,12 @@ if __name__ == "__main__":
 
     # Update the pinned repositories
     pins: list = json_content["pins"]
-    readme = replace_chunk(readme, format_pins(pins, theme), "pins")
+    joined_pins = "".join(
+        base_pin.format(username=pin["username"], repo=pin["repo"], theme=theme)
+        for pin in pins
+    )
+    pins_chunk = "<div>" + joined_pins + "</div>"
+    readme = replace_chunk(readme, pins_chunk, "pins")
 
     # Update the stats
     stats = base_stats.format(username=json_content["stats"]["username"], theme=theme)
