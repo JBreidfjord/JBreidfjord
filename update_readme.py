@@ -24,26 +24,29 @@ if __name__ == "__main__":
     theme = json_content["theme"]
 
     # Update the pinned repositories
-    pins: list = json_content["pins"]
-    joined_pins = "".join(
-        base_pin.format(username=pin["username"], repo=pin["repo"], theme=theme)
-        for pin in pins
-    )
-    pins_chunk = "<div>" + joined_pins + "</div>"
-    readme = replace_chunk(readme, pins_chunk, "pins")
+    if json_content["pins"]["enabled"]:
+        pins: list = json_content["pins"]["content"]
+        joined_pins = "".join(
+            base_pin.format(username=pin["username"], repo=pin["repo"], theme=theme)
+            for pin in pins
+        )
+        pins_chunk = "<div>" + joined_pins + "</div>"
+        readme = replace_chunk(readme, pins_chunk, "pins")
+    else:
+        readme = replace_chunk(readme, "", "pins")
 
     # Update the stats
-    stats = base_stats.format(username=json_content["stats"]["username"], theme=theme)
+    stats = base_stats.format(username=json_content["stats"]["username"], theme=theme) if json_content["stats"]["enabled"] else ""
     lang_stats = base_lang_stats.format(
         username=json_content["languages"]["username"],
         count=json_content["languages"]["count"],
         theme=theme,
-    )
+    ) if json_content["languages"]["enabled"] else ""
     wakatime = base_wakatime.format(
         username=json_content["wakatime"]["username"],
         count=json_content["wakatime"]["count"],
         theme=theme,
-    )
+    ) if json_content["wakatime"]["enabled"] else ""
 
     stats_chunk = "<div>" + wakatime + lang_stats + "</div>" + stats
     readme = replace_chunk(readme, stats_chunk, "stats")
