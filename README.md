@@ -1,7 +1,7 @@
 <!-- stats -->
 [![Wakatime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=jbreidfjord&theme=github_dark&langs_count=6&layout=compact)](https://wakatime.com/@jbreidfjord)
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=jbreidfjord&langs_count=6&theme=github_dark&layout=compact)
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=jbreidfjord&theme=github_dark&include_all_commits=1&count_private=1)]
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=jbreidfjord&theme=github_dark&include_all_commits=1&count_private=1)
 <!-- stats -->
 <!-- pins -->
 <a href="https://github.com/jbreidfjord/evolution-simulation"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jbreidfjord&repo=evolution-simulation&theme=github_dark" /></a><a href="https://github.com/jbreidfjord/particle-sim"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jbreidfjord&repo=particle-sim&theme=github_dark" /></a><a href="https://github.com/jbreidfjord/lastfm-data-viz"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jbreidfjord&repo=lastfm-data-viz&theme=github_dark" /></a><a href="https://github.com/jbreidfjord/botfjord"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jbreidfjord&repo=botfjord&theme=github_dark" /></a><a href="https://github.com/jbreidfjord/yinsh"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jbreidfjord&repo=yinsh&theme=github_dark" /></a><a href="https://github.com/jbreidfjord/csproblems"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=jbreidfjord&repo=csproblems&theme=github_dark" /></a>
