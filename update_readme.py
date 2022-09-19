@@ -1,7 +1,7 @@
 import json
 
 base_pin = '<a href="https://github.com/{username}/{repo}"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username={username}&repo={repo}&theme={theme}" /></a>'
-base_stats = "![GitHub stats](https://github-readme-stats.vercel.app/api?username={username}&theme={theme}&include_all_commits=1&count_private=1)]"
+base_stats = "![GitHub stats](https://github-readme-stats.vercel.app/api?username={username}&theme={theme}&include_all_commits=1&count_private=1)"
 base_lang_stats = "![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={username}&langs_count={count}&theme={theme}&layout=compact)"
 base_wakatime = "[![Wakatime Stats](https://github-readme-stats.vercel.app/api/wakatime?username={username}&theme={theme}&langs_count={count}&layout=compact)](https://wakatime.com/@{username})"
 
