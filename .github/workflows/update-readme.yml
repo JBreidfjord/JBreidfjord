@@ -1,0 +1,26 @@
+name: Update README
+
+on:
+  push
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Run script
+        run: python update_readme.py
+
+      - name: Commit (if changed)
+        run: |
+          git diff
+          git config --global user.email 'actions@users.noreply.github.com'
+          git config --global user.name 'action-bot'
+          git add -A
+          git commit -m "Updated README" || exit 0
+          git push

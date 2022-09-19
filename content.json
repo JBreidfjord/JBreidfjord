@@ -1,0 +1,40 @@
+{
+    "theme": "github_dark",
+    "pins": [
+        {
+            "username": "jbreidfjord",
+            "repo": "evolution-simulation"
+        },
+        {
+            "username": "jbreidfjord",
+            "repo": "particle-sim"
+        },
+        {
+            "username": "jbreidfjord",
+            "repo": "lastfm-data-viz"
+        },
+        {
+            "username": "jbreidfjord",
+            "repo": "botfjord"
+        },
+        {
+            "username": "jbreidfjord",
+            "repo": "yinsh"
+        },
+        {
+            "username": "jbreidfjord",
+            "repo": "csproblems"
+        }
+    ],
+    "wakatime": {
+        "username": "jbreidfjord",
+        "count": 6
+    },
+    "languages": {
+        "username": "jbreidfjord",
+        "count": 6
+    },
+    "stats": {
+        "username": "jbreidfjord"
+    }
+}
